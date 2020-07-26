@@ -1,0 +1,25 @@
+{
+  "name": "toy-robot-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node ./dist",
+    "test": "tsc && mocha ./dist/tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.26",
+    "typescript": "^3.9.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
