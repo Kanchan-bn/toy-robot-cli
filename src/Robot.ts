@@ -95,4 +95,3 @@ export default class Robot {
         stdout.write('The robot is in position : '+ this.xPosition+', '+this.yPosition+', and facing ' +this.facing +"\n");
     }
 }
-

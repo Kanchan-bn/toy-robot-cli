@@ -1,5 +1,5 @@
 import chai from 'chai';
-import Robot from '../Robot';
+import Robot from '../robot';
 
 let robot1: Robot;
 

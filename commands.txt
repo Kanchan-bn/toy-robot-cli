@@ -19,4 +19,20 @@ MOVE
 PLACE 4,2,SOUTH
 REPORT
 
-Output MUST BE 4,2,SOUTH
+Output must be 4,2,SOUTH
+
+
+
+MOVE
+RIGHT
+LEFT
+REPORT
+
+Output must be - The robot is not in position yet
+
+
+PLACE 5,5,EAST
+MOVE
+REPORT
+
+Output must be 5,5,EAST

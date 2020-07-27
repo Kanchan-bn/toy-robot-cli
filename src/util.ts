@@ -1,37 +1,29 @@
 import fs from 'fs';
 import { stdout } from "process";
-import Robot from './Robot';
+import Robot from './robot';
 
 export const processInputFile = (robot: Robot, input: string) => {
-    if(input === 'yes') {
-        stdout.write('type the path of the input file and press enter \n');
+    //Check for the validity of the commands text file
+    if(!input.includes('.txt')){
+        stdout.write('Please input a .txt file \n');
         return;
-    }else {
-        //Check for the validity of the commands text file
-        if(!input.includes('.txt')){
-            stdout.write('Please input a .txt file \n');
-            return;
-        }
-        try{
-            let fileInput = fs.readFileSync(input, {encoding:'utf8', flag:'r'});
-            //Split the input by line and run each line as a command
-            fileInput.split('\r\n').forEach(line => {
-                play(robot, line);
-                process.exit();
-            });
-        }catch(error) {
-            console.log(error.message + '\n');
-            process.exit();
-        }
+    }
+    try{
+        let fileInput = fs.readFileSync(input, {encoding:'utf8', flag:'r'});
+        //Split the input by line and run each line as a command
+        fileInput.split('\r\n').forEach(line => {
+            play(robot, line);
+        });
+        process.exit();
+    }catch(error) {
+        console.log(error.message + '\n');
+        process.exit();
     }
 }
 
 
 export const play = (robot: Robot, input: string) => {
-    if(input === 'no'){
-        stdout.write('Input your command \n');
-    }
-    if(input.includes('place')) {
+    if(input.toLowerCase().includes('place')) {
         let inputArr = input.split(' ');
         if(inputArr.length < 2) {
             stdout.write('Invalid input. Try again. \n');
@@ -49,19 +41,19 @@ export const play = (robot: Robot, input: string) => {
         robot.placeRobot(x, y, dir);
     }
 
-    if(input.includes('move')) {
+    if(input.toLowerCase().includes('move')) {
         robot.move();
     }
 
-    if(input.includes('left')) {
+    if(input.toLowerCase().includes('left')) {
         robot.left();
     }
 
-    if(input.includes('right')) {
+    if(input.toLowerCase().includes('right')) {
         robot.right();
     }
 
-    if(input.includes('report')) {
+    if(input.toLowerCase().includes('report')) {
         robot.report();
     }
 
