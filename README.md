@@ -11,3 +11,6 @@ Toy robot using NodeJS/TypeScript operated through CLI
 * After starting the code, type in the filename with path (./inputFile.txt) and press enter. The commands in the file are processed.
 6. ```npm test``` to run tests
 
+### Note: 
+* Commands.txt cannot be used as input as it contains text other than commands.
+* inputFile.txt can be used as CLI input
