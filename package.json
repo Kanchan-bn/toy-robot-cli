@@ -15,7 +15,7 @@
     "@types/node": "^14.0.26",
     "typescript": "^3.9.7",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.0"
   },
